@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BServ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    
+
+    .app-form {
+        background: #fff;
+        padding: 2% 3%;
+        border-radius: 5px;
+        border: solid 1px #faf9f8;
+        box-shadow: 0px 0px 10px 0px black;
+        margin-left: 27%;
+
+    }
+  </style>
+</head>
+<body>
+     <!-- NavBar Start-->
+     <nav class="navbar">
+
+        <div class="navbar-collapse ">
+            <ul class="nav navbar-nav navbar-left">
+                <li><h6 style="color:orangered;font-size: 29px;text-shadow:black;">BServ</h6></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li> <div class="border"><div class="signup"><a href="/admin">Back&nbsp;<i class="fa fa-sign-out"></i></a></div></div></li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- NavBar End-->
+    <!-- mail form section -->
+<div class="container">
+    
+  <div id="login">
+      <div class="offset-md-3 col-md-6 app-form">
+        {{#each rows}}
+      <form action="/sendmail" method="POST" autocomplete="off">
+          <div class="form-group">
+            <label>To E-Mail:</label>
+            <input type="email" class="form-control" name="to_email" id="to_email" value="{{this.email}}" readonly>
+          </div>
+          <div class="form-group">
+            <label for="mail_subject">Subject:</label>
+            <input type="text" class="form-control" name="mail_subject" id="mail_subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea type="textarea" class="form-control" name="message" id="message" required></textarea>
+          </div>
+         
+          <button type="submit" name="send_mail" class="btn" style="margin-left: 80%;">Send Mail</button>
+      
+    
+        </form>
+        {{/each}}
+    </div>
+</div> 
+</div>
+<!-- end mail form section -->
+</body>
+</html>

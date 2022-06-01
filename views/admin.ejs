@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* table th,
+    tr {
+        text-align: center;
+        font-size: 15px;
+       
+    } */
+    #table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #table td,
+    #table th {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+
+    #table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #table tr:hover {
+        background-color: rgb(219, 215, 215);
+    }
+
+    #table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: red;
+        color: white;
+        text-align: center;
+    }
+
+    .signup,
+    #login .btn {
+        border-radius: 50px;
+        border: 2px solid #f82249;
+        background-color: red;
+        width: 9rem;
+        text-align: center;
+        padding: 6px;
+        color: white;
+        margin-top: 10px;
+        margin-right: 10px;
+
+    }
+
+    .signup:hover,
+    #login .btn:hover {
+        background-color: black;
+        color: white;
+        border-color: red;
+    }
+
+    .signup a,
+    #login .btn {
+        text-decoration: none;
+        color: white;
+    }
+
+    .signup a:hover,
+    #login .btn:hover {
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .navbar {
+        background-color: #131314;
+        color: white;
+    }
+
+    .navbar a {
+        color: white;
+    }
+
+    #link a:hover {
+        background-color: red;
+        color: white;
+    }
+
+    .alert {
+        color: black;
+    }
+</style>
+
+<head>
+    <title>BServ</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- NavBar Start-->
+    <nav class="navbar">
+
+        <div class="navbar-collapse ">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <h6 style="color:orangered;font-size: 29px;text-shadow:black;">BServ</h6>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="border">
+                        <div class="signup" style="width:12rem;"><a href="/adduser" class="addbtn">Add
+                                Customer&nbsp;</a></div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="border">
+                        <div class="signup"><a href="/logout1">Signout&nbsp;<i class="fa fa-sign-out"></i></a></div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- NavBar End-->
+
+    <br>
+    <br>
+<!-- view form -->
+    <center>
+        <table class="table table-hover" style="width:95%;" id="table">
+            <thead>
+                <tr>
+
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>PHONE</th>
+                    <th>GENDER</th>
+                    <th>VEHICLE MODEL</th>
+                    <th>VEHICLE NO</th>
+                    <th>LICENSE NO</th>
+                    <th colspan="2">SERVICE TYPE</th>
+                    <th colspan="2">REGISTERED DATE</th>
+                    <th colspan="2">DELIVERY DATE</th>
+                    <th>STATUS</th>
+                    <th colspan="3">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{# each rows}}
+                <tr>
+
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.contact_no}}</td>
+                    <td>{{this.gender}}</td>
+                    <td>{{this.v_model}}</td>
+                    <td>{{this.v_no}}</td>
+                    <td>{{this.license_no}}</td>
+                    <td colspan="2">{{this.service_type}}</td>
+                    <td colspan="2">{{this.registered_date}}</td>
+                    <td colspan="2">{{this.delivery_date}}</td>
+                    <td>{{this.status}}</td>
+                    <td><a class="edit" href="/editusers/{{this.id}}" data-toggle="tooltip" title="Edit"><i
+                                class="fa fa-edit" style="font-size:24px;color: blue;"></i></a></td>
+                    <td><a class="delete" onclick="return confirm('Are you sure want to delete')"
+                            href="/deleteuser/{{this.id}}" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"
+                                style="font-size:24px;color: black;"></i></a></td>
+                    <td><a class="mail" href="/adminmail/{{this.id}}" data-toggle="tooltip" title="Mail"><i
+                                class="fa fa-envelope" aria-hidden="true"
+                                style="font-size:24px;color: orangered;"></i></a></td>
+
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+    </center>
+<!-- end view form -->
+</body>
+
+</html>

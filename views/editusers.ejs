@@ -1,0 +1,245 @@
+<html>
+
+<head>
+
+  <style>
+    .navbar {
+      background-color: #131314;
+      color: white;
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    #link a:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .form-1 {
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px 0px black;
+      width: 50rem;
+      background-color: white;
+    }
+
+    .form-1 input[type=text],
+    input[type=email],
+    input[type=date],
+    #status {
+      width: 70%;
+      text-align: center;
+    }
+
+    .in-form-1 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .alert {
+      text-align: center;
+      font-size: medium;
+      color: Green;
+    }
+
+    .form-1 input[type=text],
+    input[type=email],
+    input[type=date],
+    #status {
+      background-color: transparent;
+      border-radius: 100px;
+
+      width: 70%;
+      border-width: 2px;
+      text-align: center;
+      border-color: black;
+    }
+
+    .in-form-1 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .signup,
+    .in-form-1 .btn {
+      border-radius: 50px;
+      border: 2px solid #f82249;
+      background-color: red;
+      width: 9rem;
+      text-align: center;
+      padding: 6px;
+      color: white;
+      margin-top: 10px;
+      margin-right: 10px;
+
+    }
+
+    .signup:hover,
+    .in-form-1 .btn:hover {
+      background-color: black;
+      color: white;
+      border-color: red;
+    }
+
+    .signup a,
+    .in-form-1 .btn {
+      text-decoration: none;
+      color: white;
+    }
+
+    .signup a:hover,
+    .in-form-1 .btn:hover {
+      text-decoration: none;
+      color: white;
+
+    }
+  </style>
+
+  <title>BServ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+  <!-- NavBar Start-->
+  <nav class="navbar">
+    <link rel="stylesheet" href="/style.css">
+    <div class="navbar-collapse ">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <h6 style="color:orangered;font-size: 29px;text-shadow:black;">BServ</h6>
+        </li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div class="border">
+            <div class="signup" style="width:14rem;"><a href="/admin">View Customers&nbsp;</a></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="border">
+            <div class="signup"><a href="/logout1">Signout&nbsp;<i class="fa fa-sign-out"></i></a></div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+  <!-- NavBar End-->
+  <!-- form edit section -->
+  {{# if msg}}
+  <div class="alert"><b>{{msg}}</b></div>
+  {{/if}}
+  <center>
+    <div class="form-1">
+      <div class="in-form-1">
+
+        <h2>Edit customer Details</h2>
+        <br>
+        {{#each rows}}
+        <form action="/editusers/{{this.id}}" method="post" autocomplete="false">
+          <div class="form-group">
+            Name
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="{{this.name}}"
+              readonly>
+          </div>
+          <br>
+
+          <div class="form-group">
+            Email
+
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+              value="{{this.email}}" readonly>
+          </div>
+          <br>
+          <div class="form-group">
+            Mobile Number
+
+            <input type="text" class="form-control" id="phone" placeholder="Enter Contact no" name="phone"
+              value="{{this.contact_no}}" readonly>
+          </div>
+          <br>
+          <!-- <div class="form-check">
+            <label>
+              <h4><b>Gender</b></h4>
+            </label><br>
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="gender" value="{{this.gender}}">&nbsp;&nbsp;Male
+            </label>&nbsp;&nbsp;
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="gender" value="{{this.gender}}">&nbsp;&nbsp;Female
+            </label>
+          </div> -->
+
+          <div class="form-group">
+            Vehicle Model
+
+            <input type="text" class="form-control" id="vt" placeholder="Vehicle Model" name="vm"
+              value="{{this.v_model}}" readonly>
+          </div>
+          <br>
+
+          <div class="form-group">
+            Vehicle No
+
+            <input type="text" class="form-control" id="bn" placeholder="Vehicle no" name="vn" value="{{this.v_no}}"
+              readonly>
+          </div>
+          <br>
+          <div class="form-group">
+            License No
+
+            <input type="text" class="form-control" id="ln" placeholder="License no" name="ln"
+              value="{{this.license_no}}" readonly>
+          </div>
+          <br>
+          <!-- <div class="form-check">
+            <h2>Select Service</h2>
+            <input class="form-check-input" type="checkbox" id="check1" name="service" value="General Checkup" >
+            <label class="form-check-label">General Checkup</label>&nbsp;&nbsp;
+            <input class="form-check-input" type="checkbox" id="check1" name="service" value="Oil Change">
+            <label class="form-check-label">Oil Change</label>&nbsp;&nbsp;
+            <input class="form-check-input" type="checkbox" id="check1" name="service" value="Water Wash">
+            <label class="form-check-label">Water Wash</label>
+          </div> -->
+
+
+          <div class="form-group">
+            <label>Delivery Date</label>
+            <input type="date" class="form-control" id="date" placeholder="Delivery Date" name="ddate">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status" value="{{this.status}}">
+              <option selected>Pending</option>
+              <option>Ready for Delivery</option>
+              <option>Delivered</option>
+
+            </select>
+          </div>
+          <br>
+
+          <button type="submit" class="btn" style="width:14rem;">Update Details</button>
+
+
+        </form>
+        {{/each}}
+      </div>
+    </div>
+  </center>
+  <!-- end form edit section -->
+</body>
+
+</html>

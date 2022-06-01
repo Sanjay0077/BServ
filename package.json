@@ -1,0 +1,22 @@
+{
+  "name": "bike-service-application",
+  "version": "1.0.0",
+  "description": "online Bike Service application system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sanjay S",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.5",
+    "nodemon": "^2.0.16"
+  }
+}

@@ -1,0 +1,236 @@
+<html>
+
+<head>
+
+  <style>
+    .navbar {
+      background-color: #131314;
+      color: white;
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    #link a:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .form-1 {
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px 0px black;
+      width: 50rem;
+      background-color: white;
+    }
+
+    .form-1 input[type=text],
+    input[type=email],
+    input[type=date],
+    #status {
+      width: 70%;
+      text-align: center;
+    }
+
+    .in-form-1 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .alert {
+      text-align: center;
+      font-size: medium;
+      color: Green;
+    }
+
+    .form-1 input[type=text],
+    input[type=email],
+    input[type=date],
+    #status {
+      background-color: transparent;
+      border-radius: 100px;
+
+      width: 70%;
+      border-width: 2px;
+      text-align: center;
+      border-color: black;
+    }
+
+    .in-form-1 {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .signup,
+    .in-form-1 .btn {
+      border-radius: 50px;
+      border: 2px solid #f82249;
+      background-color: red;
+      width: 9rem;
+      text-align: center;
+      padding: 6px;
+      color: white;
+      margin-top: 10px;
+      margin-right: 10px;
+
+    }
+
+    .signup:hover,
+    .in-form-1 .btn:hover {
+      background-color: black;
+      color: white;
+      border-color: red;
+    }
+
+    .signup a,
+    .in-form-1 .btn {
+      text-decoration: none;
+      color: white;
+    }
+
+    .signup a:hover,
+    .in-form-1 .btn:hover {
+      text-decoration: none;
+      color: white;
+
+    }
+  </style>
+
+  <title>BServ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+  <!-- NavBar Start-->
+  <nav class="navbar">
+    <link rel="stylesheet" href="/style.css">
+    <div class="navbar-collapse ">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <h6 style="color:orangered;font-size: 29px;text-shadow:black;">BServ</h6>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div class="border">
+            <div class="signup" style="width:14rem;"><a href="/admin">View Customers&nbsp;</a></div>
+          </div>
+        </li>
+
+
+        <li>
+          <div class="border">
+            <div class="signup"><a href="/logout1">Signout&nbsp;<i class="fa fa-sign-out"></i></a></div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+  <!-- NavBar End-->
+  <!-- form section -->
+  {{# if msg}}
+  <div class="alert"><b>{{msg}}</b></div>
+  {{/if}}
+  <center>
+    <div class="form-1">
+      <div class="in-form-1">
+
+        <h2><u>Customer Details</u></h2>
+        <br>
+
+        <form action="/adduser" method="post" autocomplete="false">
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Enter customer name" name="name" required>
+          </div>
+          <br>
+
+          <div class="form-group">
+
+            <input type="email" class="form-control" id="email" placeholder="Enter customer email" name="email"
+              required>
+          </div>
+          <br>
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="phone" placeholder="Enter customer Contact no" name="phone"
+              required>
+          </div>
+          <br>
+          <div class="form-check">
+            <label>
+              <h4><b>Gender</b></h4>
+            </label><br>
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="gender" value="male">&nbsp;&nbsp;Male
+            </label>&nbsp;&nbsp;
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="gender" value="Female">&nbsp;&nbsp;Female
+            </label>
+          </div>
+          <br>
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="vt" placeholder="Vehicle Model" name="vm" required>
+          </div>
+          <br>
+
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="bn" placeholder="Vehicle no" name="vn" required>
+          </div>
+          <br>
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="ln" placeholder="License no" name="ln">
+          </div>
+          <br>
+          <div class="form-check">
+            <h2>Select Service</h2>
+            <input class="form-check-input" type="checkbox" id="check1" name="service" value="General Checkup" selected>
+            <label class="form-check-label">General Checkup</label>&nbsp;&nbsp;
+            <input class="form-check-input" type="checkbox" id="check1" name="service" value="Oil Change">
+            <label class="form-check-label">Oil Change</label>&nbsp;&nbsp;
+            <input class="form-check-input" type="checkbox" id="check1" name="service" value="Water Wash">
+            <label class="form-check-label">Water Wash</label>
+          </div>
+          <br>
+          <!-- <div class="form-group">
+            <label>Current Date</label>
+            <input type="date" class="form-control" id="date" placeholder="License no" name="date">
+          </div>
+          <br> -->
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status">
+              <option selected>Pending</option>
+
+
+            </select>
+          </div>
+          <br>
+          <button type="Submit" class="btn">Book Now!</button>
+
+          <button type="reset" class="btn btn-primary">Reset</button>
+
+
+
+
+        </form>
+      </div>
+    </div>
+  </center>
+  <!-- end form section -->
+</body>
+
+</html>

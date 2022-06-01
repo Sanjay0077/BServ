@@ -1,0 +1,170 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .navbar {
+      background-color: #131314;
+      color: white;
+    }
+
+    .navbar a {
+      color: white;
+    }
+
+    #link a:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .signup,
+    #signup .btn {
+      border-radius: 50px;
+      border: 2px solid #f82249;
+      background-color: red;
+      width: 9rem;
+      text-align: center;
+      padding: 6px;
+      color: white;
+      margin-top: 10px;
+      margin-right: 10px;
+
+    }
+
+    .signup:hover,
+    #signup .btn:hover {
+      background-color: black;
+      color: white;
+      border-color: red;
+    }
+
+    .signup a,
+    #signup .btn {
+      text-decoration: none;
+      color: white;
+    }
+
+    .signup a:hover,
+    #signup .btn:hover {
+      text-decoration: none;
+      color: white;
+
+    }
+
+    input[type=email],
+    input[type=password],
+    input[type=text] {
+      background-color: transparent;
+      border-radius: 100px;
+
+      width: 45%;
+      border-width: 2px;
+      text-align: center;
+      border-color: black;
+    }
+
+    #signup {
+      text-align: center;
+      margin-left: 25%;
+    }
+
+    #name {
+      width: 72%;
+    }
+  </style>
+  <title>BServ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div>
+    <!-- NavBar Start-->
+    <nav class="navbar">
+
+      <div class="navbar-collapse ">
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <h6 style="color:orangered;font-size: 29px;text-shadow:black;">BServ</h6>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-center" id="link">
+          <li><a href="/login">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <div class="border">
+              <div class="signup"><a href="./login">Sign in</a></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- NavBar End-->
+<!-- form section -->
+    <div id="Hero">
+      <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0" id="signup">
+        <h1 style="color: black;font-size: 40px;"><b>THE PREMIUM&nbsp;<span style="color: red;">BIKE</span> SERVICE</b>
+        </h1>
+        <br>
+        <center>
+          <div class="signup-1">
+            <h1 style="color:red;font-size: 30px;"><b>Welcome!</b></h1>
+            <h1 style="font-size:30px ;color: black;"><u>Sign up</u></h1>
+            <br>
+            <form action="" method="POST">
+              <div class="form-group">
+
+                <input type="text" class="form-control" id="name" placeholder="First name" name="_name" required>
+
+
+              </div>
+              <br>
+
+              <div class="form-group">
+
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="_email" required>
+              </div>
+              <br>
+              <div class="form-group">
+
+                <input type="password" class="form-control" id="pass" placeholder="Password" name="_password" required>
+              </div>
+
+
+
+
+              {{#if error}}
+              <div class="success-msg">{{ error }}</div>
+              {{/if}}
+
+              {{#if msg}}
+              <div class="success-msg">{{ msg }}</div>
+              {{/if}}
+
+              <br>
+              <button type="submit" class="btn">Sign Up</button>
+              <br>
+              <br>
+
+
+            </form>
+          </div>
+        </center>
+      </div>
+    </div>
+
+<!-- end form section -->
+
+
+
+
+</body>
+
+</html>

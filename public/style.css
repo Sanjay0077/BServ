@@ -1,0 +1,83 @@
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+  #email,#mob,#pass{
+    width: 70%;
+    text-align: center;
+    border-radius: 100px;
+   background-color: transparent;
+  }
+  .signup-1{
+    
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px black;
+    width: 35rem;
+    background-color:white;
+   padding:5px;
+   padding-top: 20px;
+   padding-bottom: 10px;
+}
+.login {
+
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px black;
+    width: 35rem;
+    background-color:white;
+    padding: 5px;
+    padding-top: 55px;
+    padding-bottom: 90px;
+}
+.img-1,.img-2,.img-3{
+    border-radius: 20px;
+     box-shadow: 0px 0px 10px 0px black;
+     padding:5px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+   
+}
+.signup,#login .btn{
+  border-radius:50px ;
+  border: 2px solid #f82249;
+  background-color: red;
+  width: 9rem;
+  text-align: center;
+  padding: 6px;
+  color: white;
+  margin-top: 10px;
+  margin-right:10px;
+
+}
+.signup:hover,#login .btn:hover{
+  background-color: black;
+  color: white;
+  border-color:red;
+}
+.signup a  ,#login .btn{
+  text-decoration: none;
+  color:white;
+}
+.signup a:hover, #login .btn:hover{
+  text-decoration: none;
+  color:white;
+ 
+}
+.navbar{
+  background-color: #131314;
+  color: white;
+}
+.navbar a{
+  color: white;
+}
+#link a:hover{
+  background-color: red;
+  color: white;
+}
+.alert{
+  color: black;
+}
+
+
+
+

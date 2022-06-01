@@ -1,0 +1,185 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/style.css"> <!-- 59.5 -->
+    <style>
+        #login {
+            height: 59.5rem;
+        }
+
+        #ktmimg {
+            height: 56rem;
+        }
+
+
+
+        .ktm {
+            padding-top: -20px;
+        }
+
+        .row {
+            width: 90%;
+            box-shadow: 0px 0px 10px 0px black;
+            background-color: rgb(43, 41, 41);
+        }
+
+        img {
+            margin-left: -110px;
+        }
+
+        .signup,
+        #login .btn {
+            border-radius: 50px;
+            border: 2px solid #f82249;
+            background-color: red;
+            width: 9rem;
+            text-align: center;
+            padding: 6px;
+            color: white;
+            margin-top: 10px;
+            margin-right: 10px;
+
+        }
+
+        .signup:hover,
+        #login .btn:hover {
+            background-color: black;
+            color: white;
+            border-color: red;
+        }
+
+        .signup a,
+        #login .btn {
+            text-decoration: none;
+            color: white;
+        }
+
+        .signup a:hover,
+        #login .btn:hover {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .navbar {
+            background-color: #131314;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+        }
+
+        #link a:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .alert {
+            color: black;
+        }
+    </style>
+    <title>BServ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <!-- NavBar Start-->
+    <nav class="navbar">
+
+        <div class="navbar-collapse ">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <h6 style="color:orangered;font-size: 29px;text-shadow:black;">BServ</h6>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-center" id="link">
+                <li><a href="/login">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+
+                <li><a href="/adminlogin">Admin</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="border">
+                        <div class="signup">
+                            <a href="/signup">SignUp</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NavBar End-->
+<!-- Log in -->
+    <div class="container-fluid">
+        <center>
+
+            <div class="row">
+
+                <div class="col-sm-5 col-md-6" id="ktmimg">
+                    <div class="ktm">
+                        <img src="/images/ktm.png" width="150%" height="100%" style="margin-bottom: 30px;"
+                            class="img-rounded">
+                    </div>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0" id="login">
+                    <br>
+                    <br>
+
+                    <br>
+                    <center>
+                        <div class="login">
+                            <h1 style="color:red;font-size: 30px;"><b>Welcome!</b></h1>
+                            <h2><u>Sign in</u></h2>
+                            <br>
+                            <form action="" method="POST">
+                                <div class="form-group">
+
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                        name="_email" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+
+                                    <input type="password" class="form-control" id="pass"
+                                        placeholder="Enter your Password" name="_password" required>
+
+                                </div>
+
+
+
+                                {{# if error}}
+                                <div class="alert"><strong>{{error}}</strong></b></div>
+                                {{/if}}
+                                <button type="submit" class="btn">Sign in</button>
+
+                            </form>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </center>
+    </div>
+    <!-- End login -->
+    <br>
+    <br>
+    <!-- footer -->
+    <footer style="background: #101522;height: 70px;padding-top: 10px;color: white;">
+        <div class="copyright" style="text-align:center">
+            &copy; Copyright <strong>BServ</strong>. All Rights Reserved
+        </div>
+        <div class="credits" style="text-align:center">
+            Designed by <a href="#">BServ</a>
+        </div>
+    </footer>
+<!-- end footer -->
+</body>
+
+</html>
