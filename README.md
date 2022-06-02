@@ -65,6 +65,8 @@ step-2
 	Create Table 
 	Table name : admin
 		CREATE TABLE `admin` (`id` int(11) UNSIGNED NOT NULL, `email` varchar(50) NOT NULL,`password` varchar(255) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+		
+		INSERT INTO `admin` (`id`, `email`, `password`) VALUES(1, 'sanjay@gmail.com', '$2a$12$xK4oYmkUVQs3PGCPFpEK8ud/3CUqr1L/.k9ol2ROX6pNJ/K4Nzu7W');
 
 AdminUsername  : 	sanjay@gmail.com
 Admin password  : 	1234567890
